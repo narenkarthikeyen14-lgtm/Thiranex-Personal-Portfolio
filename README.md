@@ -3,6 +3,8 @@
 
 A personal portfolio website showcasing my education, technical skills, projects, certifications, and development journey.
 
+**Live Website:** https://naren-portfolio-wh6r.onrender.com/
+
 ## About
 
 I am a Computer Science student specializing in Artificial Intelligence and Machine Learning at Sapthagiri NPS University, with an interest in Full Stack Development and emerging technologies.
@@ -89,6 +91,8 @@ npm run dev
 http://localhost:5000
 
 ## Contact
+
+**Live Portfolio:** https://naren-portfolio-wh6r.onrender.com/
 
 GitHub: https://github.com/narenkarthikeyen14-lgtm
 
