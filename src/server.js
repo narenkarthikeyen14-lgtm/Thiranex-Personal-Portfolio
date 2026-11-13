@@ -6,6 +6,7 @@ const connectDB = require("./config/db");
 const contactRoutes = require("./routes/contactRoutes");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const fs = require("fs");
 
 // Load environment variables
 dotenv.config();
@@ -34,6 +35,12 @@ app.use("/api/contact", contactLimiter, contactRoutes);
 
 // Frontend static files
 const publicPath = path.resolve(__dirname, "..", "public");
+console.log("SERVER DIRECTORY:", __dirname);
+console.log("PUBLIC DIRECTORY:", publicPath);
+console.log(
+    "INDEX FILE EXISTS:",
+    fs.existsSync(path.join(publicPath, "index.html"))
+);
 
 console.log("Public folder:", publicPath);
 
