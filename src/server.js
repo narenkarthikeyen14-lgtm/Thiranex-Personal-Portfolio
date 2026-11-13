@@ -31,7 +31,24 @@ const contactLimiter = rateLimit({
 app.use("/api/contact", contactLimiter, contactRoutes);
 
 // Serve frontend files
-app.use(express.static(path.join(__dirname, "../public")));
+const publicPath = path.join(__dirname, "..", "public");
+
+app.use(express.static(publicPath));
+
+// Health check API
+app.get("/api/health", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Portfolio backend is running!",
+        database: "Connected",
+        timestamp: new Date().toISOString()
+    });
+});
+
+// Homepage
+app.get("/", (req, res) => {
+    res.sendFile(path.join(publicPath, "index.html"));
+});
 
 // Health check API
 app.get("/api/health", (req, res) => {
